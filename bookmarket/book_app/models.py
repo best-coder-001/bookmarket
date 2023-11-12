@@ -12,7 +12,12 @@ class Books(models.Model):
     photo = models.ImageField(upload_to='photos/book/%Y/%m/%d/', verbose_name='Фото')
     ISBN = models.IntegerField()
     author_id = models.ManyToManyField('Authors', verbose_name='Автор')
+    genre_id = models.ManyToManyField('Genres', verbose_name='Жанр')
     slug = models.SlugField(unique=True, db_index=True, verbose_name='URL')
+
+    class Meta:
+        verbose_name = 'Книга'
+        verbose_name_plural = 'Книги'
 
     def __str__(self):
         return self.name
@@ -28,6 +33,10 @@ class Genres(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = 'Жанр'
+        verbose_name_plural = 'Жанры'
+
 
 class Authors(models.Model):
     name = models.CharField(max_length=255, verbose_name='Название')
@@ -36,10 +45,19 @@ class Authors(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = 'Автор'
+        verbose_name_plural = 'Авторы'
+
 
 class FeedBack(models.Model):
     name = models.CharField(max_length=255)
     email = models.EmailField()
     thoughts = models.TextField(max_length=2500)
 
+    def __str__(self):
+        return self.name
 
+    class Meta:
+        verbose_name = 'Отзыв'
+        verbose_name_plural = 'Отзывы'

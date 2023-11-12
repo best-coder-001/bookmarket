@@ -42,5 +42,5 @@ class BookDetailView(DataMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title=f'Книга - {self.model.objects.get(slug=self.slug_url_kwarg).name}')
+        c_def = self.get_user_context(title=f'Книга - {self.object.name}')
         return dict(list(context.items()) + list(c_def.items()))

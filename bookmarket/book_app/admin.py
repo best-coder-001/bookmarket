@@ -14,6 +14,11 @@ class AdminAuthorsModel(admin.ModelAdmin):
     pass
 
 
+class AdminFeedBacksModel(admin.ModelAdmin):
+    pass
+
+
 admin.site.register(Books, AdminBookModel)
 admin.site.register(Genres, AdminGenresModel)
 admin.site.register(Authors, AdminAuthorsModel)
+admin.site.register(FeedBack, AdminFeedBacksModel)
