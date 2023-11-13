@@ -15,6 +15,10 @@ class FeedBackForm(forms.ModelForm):
 
 
 class UserRegisterForm(UserCreationForm):
+    username = forms.CharField()
+    password1 = forms.CharField(widget=forms.PasswordInput())
+    password2 = forms.CharField(widget=forms.PasswordInput())
+
     class Meta:
         model = User
         fields = ['username', 'password1', 'password2']

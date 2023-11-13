@@ -13,6 +13,7 @@ class Books(models.Model):
     ISBN = models.IntegerField()
     author_id = models.ManyToManyField('Authors', verbose_name='Автор')
     genre_id = models.ManyToManyField('Genres', verbose_name='Жанр')
+    catalog_id = models.OneToOneField('Catalog', verbose_name='Каталог',on_delete=models.CASCADE)
     slug = models.SlugField(unique=True, db_index=True, verbose_name='URL')
 
     class Meta:
@@ -24,6 +25,18 @@ class Books(models.Model):
 
     def get_url(self):
         return reverse("book_detail", kwargs={'book_slug': self.slug})
+
+
+class Catalog(models.Model):
+    name = models.CharField(max_length=255, verbose_name='Название')
+    description = models.TextField(max_length=1500)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Каталог'
+        verbose_name_plural = 'Каталоги'
 
 
 class Genres(models.Model):
@@ -59,5 +72,4 @@ class FeedBack(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = 'Отзыв'
-        verbose_name_plural = 'Отзывы'
+        verbose_name = verbose_name_plural = 'Обратная связь'

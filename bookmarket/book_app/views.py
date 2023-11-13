@@ -1,5 +1,9 @@
+from django.contrib.auth import logout
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.views import LoginView
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, FormView
 from .models import *
 from .utils import *
 from .forms import *
@@ -44,3 +48,32 @@ class BookDetailView(DataMixin, DetailView):
         context = super().get_context_data(**kwargs)
         c_def = self.get_user_context()
         return dict(list(context.items()) + list(c_def.items()))
+
+
+class UserRegistrationView(DataMixin, CreateView):
+    form_class = UserRegisterForm
+    context_object_name = 'form'
+    template_name = 'book_app/registration.html'
+    success_url = reverse_lazy('home')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title='Регистрация пользователей')
+        return dict(list(context.items()) + list(c_def.items()))
+
+
+class UserLoginView(DataMixin, LoginView):
+    form_class = AuthenticationForm
+    context_object_name = 'form'
+    template_name = 'book_app/login.html'
+    success_url = reverse_lazy('home')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title='Регистрация пользователей')
+        return dict(list(context.items()) + list(c_def.items()))
+
+
+def logout_user(request):
+    logout(request)
+    return redirect('home')
