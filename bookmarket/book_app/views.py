@@ -74,6 +74,22 @@ class UserLoginView(DataMixin, LoginView):
         return dict(list(context.items()) + list(c_def.items()))
 
 
+class BookAddView(DataMixin, CreateView):
+    form_class = AddBookForm
+    context_object_name = 'form'
+    template_name = 'book_app/add_book.html'
+    success_url = reverse_lazy('home')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title='Добавление книг')
+        return dict(list(context.items()) + list(c_def.items()))
+
+
+class UserForgotPasswordView(DataMixin):
+    ...
+
+
 def logout_user(request):
     logout(request)
     return redirect('home')

@@ -9,7 +9,9 @@ urlpatterns = [
     path('send_us', SendUsView.as_view(), name='send_us'),
     path('detail/<slug:book_slug>', BookDetailView.as_view(), name='book_detail'),
     path('login', UserLoginView.as_view(), name='login'),
-    path('registration', UserRegistrationView.as_view(), name='registration')
+    path('registration', UserRegistrationView.as_view(), name='registration'),
+    path('add_book', BookAddView.as_view(), name='add_book')
+
 ]
 
 if settings.DEBUG:

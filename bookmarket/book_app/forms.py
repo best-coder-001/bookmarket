@@ -14,6 +14,12 @@ class FeedBackForm(forms.ModelForm):
         }
 
 
+class AddBookForm(forms.ModelForm):
+    class Meta:
+        model = Books
+        fields = "__all__"
+
+
 class UserRegisterForm(UserCreationForm):
     username = forms.CharField()
     password1 = forms.CharField(widget=forms.PasswordInput())
@@ -22,3 +28,7 @@ class UserRegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'password1', 'password2']
+
+
+class UserForgotPasswordForm(forms.Form):
+    ...

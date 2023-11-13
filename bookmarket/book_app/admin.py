@@ -3,15 +3,15 @@ from .models import *
 
 
 class AdminBookModel(admin.ModelAdmin):
-    pass
+    prepopulated_fields = {"slug": ('name',)}
 
 
 class AdminGenresModel(admin.ModelAdmin):
-    pass
+    prepopulated_fields = {"slug": ('name',)}
 
 
 class AdminAuthorsModel(admin.ModelAdmin):
-    pass
+    prepopulated_fields = {"slug": ('name',)}
 
 
 class AdminFeedBacksModel(admin.ModelAdmin):
