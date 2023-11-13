@@ -50,38 +50,51 @@
                     <button
                         class="btn-primary btn-catalog mx-4 my-1 d-flex align-items-center justify-content-center">
                         <h4 class>Каталог</h4>
-                </button>
+                    </button>
                     <div class="nav-search">
                         <div class="input-group">
                             <div class="position-relative">
-                                <input type="search" id="form1" class="form-control search-words my-1 mx-5" placeholder="Поиск">
-                                <i class="fas fa-search position-absolute" style="top: 50%; transform: translateY(-50%); left: 10px;"></i>
+                                <input type="search" id="form1"
+                                    class="form-control search-words my-1 mx-5"
+                                    placeholder="Поиск">
+                                <i class="fas fa-search position-absolute"
+                                    style="top: 50%; transform: translateY(-50%); left: 10px;"></i>
                             </div>
                         </div>
                     </div>
-                                    
+
                     <div class="nav-favorite">
                         <div class="flex-column">
-                            <i class="far fa-bookmark d-flex justify-content-center my-1" style="color: #ffffff;"></i>
+                            <i
+                                class="far fa-bookmark d-flex justify-content-center my-1"
+                                style="color: #ffffff;"></i>
                             <h5>Избранное</h5>
                         </div>
                     </div>
                     <div class="nav-cart mx-4">
                         <div class="flex-column">
-                            <i class="fas fa-shopping-cart d-flex justify-content-center my-1" style="color: #ffffff;"></i>
+                            <i
+                                class="fas fa-shopping-cart d-flex justify-content-center my-1"
+                                style="color: #ffffff;"></i>
                             <h5>Корзина</h5>
                         </div>
                     </div>
                     <div class="nav-login my-1">
-                        <a href="/login" class="btn-primary btn-login d-flex align-items-center justify-content-center">
+                        <a href="/login"
+                            class="btn-primary btn-login d-flex align-items-center justify-content-center">
                             <h4>Войти</h4>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
+
+        {% block content %}
+        {% endblock %}
+
+        {% include 'main/banner.html' %}
+        {% include 'main/popular.html' %}
+
     </body>
 
-    {% block content %}
-    {% endblock %}
 </html>

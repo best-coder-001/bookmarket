@@ -10,6 +10,7 @@ def index(request):
 def login(request):
     return render(request, "book_app/auth/login.html")
 
+
 class IndexPage(ListView):
     pass
 
