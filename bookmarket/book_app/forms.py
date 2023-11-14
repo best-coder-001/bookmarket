@@ -31,4 +31,6 @@ class UserRegisterForm(UserCreationForm):
 
 
 class UserForgotPasswordForm(forms.Form):
-    ...
+    email = forms.EmailField(widget=forms.EmailInput())
+    new_password = forms.CharField(widget=forms.PasswordInput())
+

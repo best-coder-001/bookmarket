@@ -10,7 +10,8 @@ urlpatterns = [
     path('detail/<slug:book_slug>', BookDetailView.as_view(), name='book_detail'),
     path('login', UserLoginView.as_view(), name='login'),
     path('registration', UserRegistrationView.as_view(), name='registration'),
-    path('add_book', BookAddView.as_view(), name='add_book')
+    path('add_book', BookAddView.as_view(), name='add_book'),
+    # path('forgot_password', UserForgotPasswordView.as_view(), name='forgot_psw')
 
 ]
 

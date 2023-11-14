@@ -13,7 +13,7 @@ class Books(models.Model):
     ISBN = models.IntegerField()
     author_id = models.ManyToManyField('Authors', verbose_name='Автор')
     genre_id = models.ManyToManyField('Genres', verbose_name='Жанр')
-    catalog_id = models.OneToOneField('Catalog', verbose_name='Каталог',on_delete=models.CASCADE)
+    catalog_id = models.ForeignKey('Catalog', verbose_name='Каталог',on_delete=models.CASCADE)
     slug = models.SlugField(unique=True, db_index=True, verbose_name='URL')
 
     class Meta:

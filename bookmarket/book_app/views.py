@@ -86,8 +86,15 @@ class BookAddView(DataMixin, CreateView):
         return dict(list(context.items()) + list(c_def.items()))
 
 
-class UserForgotPasswordView(DataMixin):
-    ...
+class UserForgotPasswordView(DataMixin, FormView):
+    form_class = UserForgotPasswordForm
+    template_name = 'book_app/forgot_psw.html'
+    success_url = reverse_lazy('home')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title='Забыл пароль')
+        return dict(list(context.items()) + list(c_def.items()))
 
 
 def logout_user(request):
