@@ -1,0 +1,51 @@
+body {
+    background-color: #1F1A2D !important;
+    font-family: Philosopher;
+}
+
+
+.card-banner {
+    background-color: #B9E6FF;
+    border: none;
+}
+
+.banner-text {
+    font-size: 28px;
+    color: #1F1A2D;
+    font-weight: 700;
+}
+
+.banner-text2 {
+    font-size: 20px;
+    color: #1F1A2D;
+}
+
+.btn-banner-login {
+    background-color: #1F1A2D;
+    color: #FFFFFF;
+    font-weight: 700
+}
+
+
+.popular-title {
+    color: #FFFFFF;
+}
+
+.card-popular {
+    background-color: #2B2244;
+}
+
+.btn-popular {
+    background-color: #FFFFFF;
+    color: #1F1A2D;
+    font-weight: 700;
+}
+
+.pbook-title {
+    font-size: 15px;
+    color: #FFFFFF;
+}
+
+.p-author {
+    color: #726e6e;
+}
