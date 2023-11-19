@@ -1,0 +1,23 @@
+.footer-dark {
+    border-top: 1px solid #FFFFFF;
+}
+
+.first-link, .second-link, .third-link {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 15px;
+}
+
+.second-link2 {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.third-link2 {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 500;
+}

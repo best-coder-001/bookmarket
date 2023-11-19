@@ -24,8 +24,6 @@
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
-        <link href="/static/css/book_app/index.css" rel="stylesheet">
-        <link href="/static/css/book_app/navbar.css" rel="stylesheet">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"
             integrity="sha384-o3V3dfD6Ez2XxZiAdorFW73/Qw6U5HF2GNdQ+0vQaD1HP0k/dLQSTSNQf5KkqVOe"
@@ -33,19 +31,29 @@
         <link
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
             rel="stylesheet">
+
+        <!-- CSS links -->
+        <link href="/static/css/book_app/index.css" rel="stylesheet">
+        <link href="/static/css/book_app/navbar.css" rel="stylesheet">
+        <link href="/static/css/book_app/footer.css" rel="stylesheet">
     </head>
     <body>
         <!-- Navbar -->
         <div class="container mt-3">
             <div class="row">
                 <div class="col-lg-12 d-flex">
-                    <div class="flex-column nav-logo">
+                    <!-- <div class="flex-column nav-logo">
                         <div class="nav-text">
                             ЧИТАЙ
                         </div>
                         <div class="nav-text">
                             КНИГИ
                         </div>
+                    </div> -->
+                    <div class="flex-column nav-logo">
+                        <a href="/">
+                            <img src="/static/img/logo(for_dark).png">
+                        </a>
                     </div>
                     <button
                         class="btn-primary btn-catalog mx-4 my-1 d-flex align-items-center justify-content-center">
@@ -92,9 +100,14 @@
         {% block content %}
         {% endblock %}
 
-        {% include 'main/banner.html' %}
-        {% include 'main/popular.html' %}
-
     </body>
+
+    {% if request.path == "/" %}
+    {% include 'main/banner.html' %}
+    {% include 'main/popular.html' %}
+
+    {% endif %}
+
+    {% include 'main/footer.html' %}
 
 </html>
