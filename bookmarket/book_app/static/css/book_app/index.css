@@ -49,3 +49,44 @@ body {
 .p-author {
     color: #726e6e;
 }
+
+
+
+.card-promotion {
+    background-image: url("/static/img/space-bg2.jpg");
+    width: 400px;
+}
+
+.promotion-title {
+    color: #FFFFFF;
+}
+
+.promotion-text1, .promotion-text3 {
+    color: #FFFFFF;
+    font-size: 24px;
+} 
+
+
+.promotion-text2 {
+    color: #FFFFFF;
+    font-size: 40px;
+}
+
+.btn-promotion {
+    background-color: #FFFFFF;
+    color: #1F1A2D;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.promotion-img1 {
+    z-index: 2;
+    position: absolute;
+    margin-top: 3rem !important;
+}
+
+.promotion-img2 {
+    z-index: 1;
+    position: absolute;
+    margin-left: 6rem !important;
+}
